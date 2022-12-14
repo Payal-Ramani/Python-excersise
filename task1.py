@@ -1,38 +1,35 @@
 list_of_numbers = [2, 4, 5, 2, 12, 44, 5, 1, 2, 3]
+# TO find the length of list
 length_of_list = len(list_of_numbers)
 
-first_three_numbers = []
-for i in range(3):
-    first_three_numbers.append(list_of_numbers[i])
-
+# To find sum of odd numbers from the list
 def Display_sum_of_odd_numbers(list):
     sum = 0
-    for i in list:
-        if i % 2 != 0:
-            sum += i
+    for n in list:
+        if n % 2 != 0:
+            sum += n
     return sum
 
+# To find number of duplicate elements from the list
+empty_list_forCountDuplicates = []
+for num in list_of_numbers:
+    if list_of_numbers.count(num) > 1:
+        if num not in empty_list_forCountDuplicates:
+            empty_list_forCountDuplicates.append(num)
 
-empty_list = []
-for i in list_of_numbers:
-        if list_of_numbers.count(i) > 1:
-            empty_list.append(i)
-            newlist = list(set(empty_list))
-
-list_without_duplicates = []
-for i in list_of_numbers:
-    if i not in list_without_duplicates:
-        list_without_duplicates.append(i)
+# to find list without duplicate elements
+list_without_duplicates = list(set(list_of_numbers))
 
 input_from_user = input(" A : length of list \n B : Displays first 3 numbers \n C : Displays sum of odd numbers \n D : Number of Duplicate numbers \n E : Display list without duplicate numbers \n Enter Your choice from A,B,C,D,E: " )
 
 if(input_from_user == "A"):
     print(length_of_list)
+#to find 1st three elemets of the list 
 if(input_from_user == "B"):
-    print(first_three_numbers)
+    print(list_of_numbers[:3])
 if(input_from_user == "C"):
     print(Display_sum_of_odd_numbers(list_of_numbers))
 if(input_from_user == "D"):
-    print(len(newlist))
+    print(len(empty_list_forCountDuplicates))
 if(input_from_user == "E"):
-    print(list_without_duplicates)
+    print(list(list_without_duplicates))
