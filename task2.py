@@ -4,14 +4,14 @@ names = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'W
 print("Names:",names)
 
 # Print the length of each element of the list
-Name_length = [len(name) for name in names]
-print("Name lengths : ",Name_length)
+names_length = [len(name) for name in names]
+print("Name lengths : ",names_length)
 
-sorted_len = list(set(Name_length))
+unique_name_lengths = list(set(names_length))
 my_dict = {}
 
-for i in sorted_len:
-    my_dict[i] = Name_length.count(i)
+for num in unique_name_lengths:
+    my_dict[num] = names_length.count(num)
 
 sorted_dict = sorted(my_dict.items()) #this sort by key 
 # sorted_dict = sorted(my_dict.items(),key = lambda i : i[1]) # this sort by value
