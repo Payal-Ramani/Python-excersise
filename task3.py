@@ -9,9 +9,9 @@ print(splited_list)
 
 # here we put all the string in one list
 temp = []
-for i in splited_list:
-    for j in i :
-        temp.append(j)
+for list in splited_list:
+    for string in list :
+        temp.append(string)
 print(temp)
 
 # finally we get the number of each string
