@@ -30,5 +30,12 @@ def rec_fun_for_sum(size):
     return numbers[size-1] + rec_fun_for_sum(size-1)
 print(rec_fun_for_sum(len(numbers))) 
    
+# Implementation with using different method 
+def rec_func_for_list_sum(num_list_for_sum):
+    if len(num_list_for_sum) == 0:
+        return 0
+    removed_element = num_list_for_sum.pop()
+    return removed_element + rec_func_for_list_sum(num_list_for_sum)
+print(rec_func_for_list_sum(numbers))
 
 
