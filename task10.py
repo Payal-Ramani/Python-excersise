@@ -1,25 +1,31 @@
+from math import ceil
 # **_**
 # *___* 
 # _____ 
 # *___*
- 
 # **_**
 
 #number 1 : 
-n= 5
-for line in range(n):
-    if line == n-n or line == n-1:
-        print("*"*2,end="")
-        print("_"*(n-4),end="")
-        print("*"*2,end="")
-    elif line == n-(n-1) or line == n-2:
-        print("*",end="")
-        print("_"*(n-2),end='')
-        print("*",end="")
-    else :
-        print("_"*n,end="")
-    print("\r")
-print('\n')
+n= 9
+
+for i in range(1,n+1):
+    if i <= ceil(n/2):
+        for j in range(int((n/2)-i+1),0,-1):
+            print("*",end='')
+        for j in range(1,2*i):
+            print("_",end="")
+        for j in range(int((n/2)-i+1),0,-1):
+            print("*",end='')
+        print()
+for i in range(1,n+1):
+    if i < ceil(n/2):
+        for j in range(i):
+            print("*",end='')
+        for j in range(n-(2*i),0,-1):
+            print("_",end='')
+        for j in range(i):
+            print("*",end='')
+        print()
 
 # __*__ 
 # _***_
@@ -28,27 +34,31 @@ print('\n')
 # __*__
 
 # number 2 :
+for i in range(1,n+1):
+    if i <= ceil(n/2):
+        for j in range(int((n/2)-i+1),0,-1):
+            print("_",end='')
+        for j in range(1,2*i):
+            print("*",end="")
+        for j in range(int((n/2)-i+1),0,-1):
+            print("_",end='')
+        print()
+for i in range(1,n+1):
+    if i < ceil(n/2):
+        for j in range(i):
+            print("_",end='')
+        for j in range(n-(2*i),0,-1):
+            print("*",end='')
+        for j in range(i):
+            print("_",end='')
+        print()
 
-for line in range(n):
-    if line == n-n or line == n-1:
-        print("_"*2,end="")
-        print("*"*(n-4),end="")
-        print("_"*2,end="")
-    elif line == n-(n-1) or line == n-2:
-        print("_",end="")
-        print("*"*(n-2),end='')
-        print("_",end="")
-    else :
-        print("*"*n,end="")
-    print("\r")
-print('\n')
-
-# number 3 :
-# * 
-# **
-# *_*
-# *__* 
-# *****
+# # number 3 :
+# # * 
+# # **
+# # *_*
+# # *__* 
+# # *****
 
 
 for line in range(n):
@@ -61,12 +71,12 @@ for line in range(n):
         print("_"*(line-1),end="")
         print("*",end="\n")
     
-# number 4 :
-# ***** 
-# *___* 
-# *___* 
-# *___* 
-# *****
+# # number 4 :
+# # ***** 
+# # *___* 
+# # *___* 
+# # *___* 
+# # *****
 
 
 for line in range(n):    
@@ -77,16 +87,16 @@ for line in range(n):
         print("_"*(n-2),end='')
         print("*",end='\n')
 
-# number 5:
-# 1 
-# 2 3
-# 4 5 6
-# 7 8 9 10
-# 11 12 13 14 15
+# # number 5:
+# # 1 
+# # 2 3
+# # 4 5 6
+# # 7 8 9 10
+# # 11 12 13 14 15
 
 num = 1
 for i in range(1,n+1):
     for j in range(i):
         print(num,end=" ")
         num += 1
-    print("\r")
+    print("\n")
