@@ -17,9 +17,7 @@ def func_for_fib_sol(num):
     
     dictinary_for_store_fib_value[num] = func_for_fib_sol(num-1) + func_for_fib_sol(num-2)
     return dictinary_for_store_fib_value[num]
-
-list_of_fib_seq = [func_for_fib_sol(n) for n in range(num1+1)]
-print(list_of_fib_seq[-1])
+print(func_for_fib_sol(num1))
 
 # second recursive functon question
 numbers = [23, 44, 5, 67, 1, 1, 2, 4, 5]
