@@ -23,22 +23,13 @@ least_frequent_3 = sorted_dict[-3:]
 print("The three most frequent name lenghts are: ")
 
 for key,value in most_frequent_3:
-    list_for_store_values = []
-    for name in names:
-        if(len(name) == key):
-            list_for_store_values.append(name)
-    print(f"{value} names of length {key} = {list_for_store_values} ")
+    for_store_filtered_names = [name for name in names if len(name) == key]
+    print(f"{value} names of length {key} = {for_store_filtered_names} ")
 
 # To print three least frequent lengths of the list
 print("The three least frequent name lenghts are: ")
 for key,value in least_frequent_3:
-    list_for_store_values = []
-    for name in names:
-        if(len(name) == key):
-            list_for_store_values.append(name)
-    print(f"{value} names of length {key} = {list_for_store_values} ")
-
-
-
+    for_store_filtered_names = [name for name in names if len(name) == key]
+    print(f"{value} names of length {key} = {for_store_filtered_names} ")
 
 
