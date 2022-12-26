@@ -31,18 +31,3 @@ if(input_from_user == "E"):
     print(list(list_without_duplicates))
 
 
-
-
-# empty_list_forCountDuplicates = []
-# for num in list_of_numbers:
-#     if list_of_numbers.count(num) > 1:
-#         if num not in empty_list_forCountDuplicates:
-#             empty_list_forCountDuplicates.append(num)
-
-# def Display_sum_of_odd_numbers(list):
-#     sum = 0
-#     for n in list:
-#         if n % 2 != 0:
-#             sum += n
-#     return sum
-# print(Display_sum_of_odd_numbers(list_of_numbers))

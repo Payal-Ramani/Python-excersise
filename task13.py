@@ -6,20 +6,17 @@ class Numbers:
     def get(self):
         return self.numbers
 
-    def change_original_values(self, func : lambda x: x):
+    def modify_by_multiplying(self, func : lambda x :x):
         self.func = func
-        doubled_values = map(self.func,self.numbers)
-        return list(doubled_values)
+        return list(map(self.func,self.numbers))
 
-    def filter_values(self, filter_func: lambda x: x):
+    def filter_by_dividing_number(self, filter_func: lambda x: x):
         self.filter_func = filter_func
-        filtered_values = filter(self.filter_func,self.numbers)
-        return list(filtered_values)
+        return list(filter(self.filter_func,self.numbers))
 
     def compound_the_numbers(self, reduce_func: lambda compound, d: compound + d):
         self.reduce_func = reduce_func
-        reduced_values = functools.reduce(self.reduce_func,self.numbers)
-        return reduced_values
+        return functools.reduce(self.reduce_func,self.numbers)
     
     def sort(self):
         return  sorted(self.numbers)
@@ -29,7 +26,12 @@ if __name__ == "__main__":
     
 n1 = Numbers(numbers)
 print(f"Numbers : {n1.get()}")
-print(f"Doubled Numbers : {n1.change_original_values(func = lambda x : x*2)}")
-print(f"Filtered Numbers : {n1.filter_values(filter_func = lambda x : x % 2 == 0)}" )
+
+mul_num = int(input("enter the number with which you want to multiply the list of numbers : "))
+print(f"Doubled Numbers : {n1.modify_by_multiplying(func = lambda x : x * mul_num)}")
+
+div_num = int(input("enter the number with which you want to divide the list of numbers : "))
+print(f"Filtered Numbers : {n1.filter_by_dividing_number(filter_func = lambda x : x % div_num == 0)}" )
+
 print(f"Compounded Value : {n1.compound_the_numbers(reduce_func = lambda x , y : x + y )}")
 print(f"Sorted List : {n1.sort()}")
